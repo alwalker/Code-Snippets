@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Equals</Title>
+      <Author></Author>
+      <Description>Common implementation of bool Equals(object right)</Description>
+      <HelpUrl></HelpUrl>
+      <SnippetTypes />
+      <Keywords />
+      <Shortcut>eql</Shortcut>
+    </Header>
+    <Snippet>
+      <References />
+      <Imports />
+      <Declarations>
+        <Literal Editable="false">
+          <ID>classname</ID>
+          <Type></Type>
+          <ToolTip></ToolTip>
+          <Default>classname</Default>
+          <Function>ClassName()</Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Kind="method body" Delimiter="$"><![CDATA[ public override bool Equals(object right)
+ {
+ 	  if (object.ReferenceEquals(right, null))
+    {
+    	return false;
+    }
+    if (object.ReferenceEquals(this, right))
+    {
+    	return true;
+    }
+
+    if (GetType() != right.GetType())
+    {
+    	return false;
+    }
+
+    return Equals(right as $classname$);
+}
+$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
